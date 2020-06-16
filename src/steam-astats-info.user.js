@@ -53,7 +53,7 @@
         }
     }
 
-    function addGameInfo(data,game_id){
+    function renderGameInfo(data,game_id){
         if(data.rating || data.achievements || data.time_to_beat.storyline || data.time_to_beat.fullgame || data.time_to_beat.complete){
             // HTML with game info:
             let astatsData = '<div><div class="block responsive_apppage_details_right heading"><a rel="noopener noreferrer" target="_blank" title="View more information on AStats.nl" href="' + ASTATS_URL+game_id + '">AStats</a> game info</div></div><div class="block responsive_apppage_details_left game_details"><div class="block_content"><div class="block_content_inner"><div class="details_block">'+(data.rating?'<div class="dev_row"><b>Players rating:</b> ' + data.rating + '</div>':'')+'<div class="dev_row"><b>Achievements:</b> ' + (data.achievements?data.achievements:'-') + '</div>'+(data.time_to_beat.storyline?'<div class="dev_row"><b>Storyline playthgough:</b> ' + data.time_to_beat.storyline + ' h.</div>':'')+(data.time_to_beat.fullgame?'<div class="dev_row"><b>Storyline &amp; Side quests:</b> ' + data.time_to_beat.fullgame + ' h.</div>':'')+(data.time_to_beat.complete?'<div class="dev_row"><b>Completionist:</b> ' + data.time_to_beat.complete + ' h.</div>':'')+'</div></div></div></div>';
@@ -103,9 +103,11 @@
         return null;
     }
 
-    function getGameInfo(game_id){
+    function fetchGameInfo(game_id){
+        // get proper xmlHTTPrequest:
+        let $xhr = (typeof GM.xmlhttpRequest !== 'undefined')?GM.xmlhttpRequest:GM_xmlhttpRequest;
         // query info about game:
-        GM_xmlhttpRequest({
+        $xhr({
             method:'GET',
             url: ASTATS_URL+game_id,
             headers:{
@@ -122,7 +124,7 @@
                         if(data){
                             $log('Data Loaded.',LOG_INFO);
                             // add game info to page:
-                            addGameInfo(data,game_id);
+                            renderGameInfo(data,game_id);
                         }else{
                             $log('Game does not have entry on AStats.',LOG_WARN);
                         }
@@ -150,6 +152,6 @@
         // get App ID:
         let appID = window.location.href.match(/\/app\/([\d]*)\//i).pop();
 
-        getGameInfo(appID);
+        fetchGameInfo(appID);
     }
 })();
