@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Steam AStats game info
+// @name         Steam: AStats game info
 // @description  Add time to beat info and players rating form AStats.nl to Steam store pages.
 // @author       Xeloses
 // @version      1.0
