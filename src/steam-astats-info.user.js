@@ -16,7 +16,7 @@
 // ==/UserScript==
 
 (function(){
-    //'use strict';
+    'use strict';
 
     // AStats game info URL:
     const ASTATS_URL = 'https://astats.astats.nl/astats/Steam_Game_Info.php?AppID=';
