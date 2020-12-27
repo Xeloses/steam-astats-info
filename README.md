@@ -12,4 +12,4 @@ Add game rating and time to beat from AStats.nl to steam store pages.
     * **Opera**: [install](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)
     * **Safari** (MacOS): [install](https://apps.apple.com/us/app/tampermonkey/id1482490089)
     * **IE/Edge**: *no support (using these applications is strongly not recommended)*
-2. Install userscript: [install](https://github.com/Xeloses/steam-astats-info/raw/master/steam-astats-info.user.js)
+2. Install userscript: [install](https://raw.githubusercontent.com/Xeloses/steam-astats-info/master/steam-astats-info.user.js)
