@@ -6,8 +6,8 @@
 // @license      MIT
 // @namespace    Xeloses.Steam.AStats
 // @match        https://store.steampowered.com/app/*
-// @updateURL    https://github.com/Xeloses/steam-astats-info/raw/master/steam-astats-info.user.js
-// @downloadURL  https://github.com/Xeloses/steam-astats-info/raw/master/steam-astats-info.user.js
+// @updateURL    https://raw.githubusercontent.com/Xeloses/steam-astats-info/master/steam-astats-info.user.js
+// @downloadURL  https://raw.githubusercontent.com/Xeloses/steam-astats-info/master/steam-astats-info.user.js
 // @grant        GM_xmlhttpRequest
 // @grant        GM.xmlhttpRequest
 // @connect      astats.astats.nl
